@@ -46,15 +46,13 @@ Then log in as this admin user and install Kiali:
 
 ```
 oc login -u admin -p admin
-
-export NAMESPACE=istio-system
  
-oc create -f https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali-configmap.yaml -n ${NAMESPACE}
+oc create -f https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali-configmap.yaml -n istio-system
 curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali.yaml | \
    IMAGE_NAME=kiali/kiali \
    IMAGE_VERSION=latest \
-   NAMESPACE=${NAMESPACE} \
-   VERBOSE_MODE=4 envsubst | oc create -n ${NAMESPACE} -f -
+   NAMESPACE=istio-system \
+   VERBOSE_MODE=4 envsubst | oc create -n istio-system -f -
 
 ```
 
@@ -64,7 +62,13 @@ Once the above has completed and the Docker image has been pulled from Dockerhub
 
 ![OpenShift console](/assets/img/os-console.png)
 
-In this case it is `http://kiali-istio-system.192.168.64.13.nip.io`.
+In this case it is `http://kiali-istio-system.192.168.64.13.nip.io`. In your case this could be a different IP.
+
+You can also use the `oc` command to determine the base-url:
+
+```
+oc get route -n istio-system -l app=kiali
+```
 
 Log in to the Kiali-UI as `jdoe`/`password`. 
 
