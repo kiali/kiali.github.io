@@ -5,21 +5,22 @@
 <body>
   <h1>Kiali - Observability for the service mesh</h1>
 <h2>tl;dr:</h2>
-Kiali provides answers to the question "What are my microservices in my Istio service mesh doing?"
+Kiali provides answers to the question "What are the microservices in my Istio service mesh doing?"
 
 <h2>Description of Kiali</h2>
-Microservice Architectures break up the monolith in many smaller pieces
+Microservice Architecture breaks up the monolith to many smaller pieces
 that are composed together. Patterns to secure the communication between
-services like Fault Tolerance (via timeout, retry, circuit breaking etc.)
-have come up as well as distributed tracing to be able to see where calls
+services like fault tolerance (via timeout, retry, circuit breaking, etc.)
+have come up, as well as distributed tracing to be able to see where calls
 are going.
 <p/>
-A service mesh can now on a platform level provide these services and
+A service mesh can now provide these services on a platform level, and
 frees the application writers from those tasks. Routing decisions are
 done at the mesh level.
 <p/>
-Kiali works with Istio to visualise the service mesh topology, featues
-like circuit breakers or request rates. Kiali also includes Jaeger Tracing
+Kiali works with Istio to visualise the service mesh topology, features
+like circuit breakers or request rates.
+Kiali also includes Jaeger Tracing
 to provide distributed tracing out of the box.
 
 <h2>More...</h2>
@@ -32,5 +33,3 @@ to provide distributed tracing out of the box.
 
 </body>
 </html>
-
-
