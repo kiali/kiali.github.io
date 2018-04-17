@@ -2,7 +2,6 @@
 title: Kiali - Observability for the service mesh
 ---
 
-# Kiali - Observability for the service mesh
 
 ![Kiali screenshot](/assets/img/kiali-graph.png)
 
