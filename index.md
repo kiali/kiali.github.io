@@ -82,6 +82,10 @@ To achieve the best results you should have an example application like 'bookinf
 
 ![Jaeger view](/assets/img/kiali-jaeger.png)
 
+## License
+
+Kiali is open source and released under [Apache License v2](https://www.apache.org/licenses/LICENSE-2.0.txt)
+
 ## More...
 
 [Kiali-Users](https://groups.google.com/forum/#!forum/kiali-users) Google Group
