@@ -46,11 +46,14 @@ Then log in as this admin user and install Kiali:
 ```
 oc login -u admin -p admin
  
-oc create -f https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali-configmap.yaml -n istio-system
+curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali-configmap.yaml | \
+   VERSION_LABEL=master envsubst | oc create -n istio-system -f -
+
 curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali.yaml | \
    IMAGE_NAME=kiali/kiali \
    IMAGE_VERSION=latest \
    NAMESPACE=istio-system \
+   VERSION_LABEL=master \
    VERBOSE_MODE=4 envsubst | oc create -n istio-system -f -
 
 ```
