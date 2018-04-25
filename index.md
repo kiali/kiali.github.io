@@ -31,9 +31,9 @@ to provide distributed tracing out of the box.
 
 Kiali is still in development. Snapshots releases are pushed on Dockerhub from the CI pipeline.
 
-To deploy Kiali to your Istio-enabled OpenShift cluster you can run the following. Kiali currently requires Istio version 0.7.1.
+To deploy Kiali to your Istio-enabled OpenShift cluster you can run the following. Kiali currently requires Istio version 0.7.1 (see below if you have not yet installed Istio).
 
-First you need to put the user that is installing Kiali the `cluster-admin` role. In the following case this will be the `admin` user:
+First you need to grant the user that is installing Istio and Kiali the `cluster-admin` role. In the following case this will be the `admin` user:
 
 ````
 oc login -u system:admin
@@ -41,11 +41,16 @@ oc adm policy add-cluster-role-to-user cluster-admin -z default admin
 
 ````
 
-Then log in as this admin user and install Kiali:
+Then log in as this admin user:
+
+
+	oc login -u admin -p admin
+
+You can now install Istio if needed ( [see below](#install-istio) ).
+
+Then install Kiali:
 
 ```
-oc login -u admin -p admin
- 
 curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali-configmap.yaml | \
    VERSION_LABEL=master envsubst | oc create -n istio-system -f -
 
@@ -56,7 +61,8 @@ curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali
    VERSION_LABEL=master \
    VERBOSE_MODE=4 envsubst | oc create -n istio-system -f -
 
-```
+````
+
 
 If you don't have `envsubst` installed, you can get it via the Gnu `gettext` package.
 
@@ -74,7 +80,7 @@ oc get route -n istio-system -l app=kiali
 
 Log in to the Kiali-UI as `jdoe`/`password`. 
 
-To achieve the best results you should have an example application like 'bookinfo' from the Istio examples deployed.
+To achieve the best results you should have an example application like 'bookinfo' from the Istio examples deployed (if you use the install script from [below](#install-istio) it is already installed).
 
 ### Detail view of a single service
 
@@ -99,3 +105,28 @@ Kiali is open source and released under [Apache License v2](https://www.apache.o
 
 [Kiali on Irc](irc://irc.freenode.net/#kiali)
 
+
+## Appendix
+
+<h3 id="install-istio">Installing Istio</h3>
+
+
+You can use the following script to install Istio. The user installing it needs cluster-admin rights (e.g. the admin user from above).
+
+```
+cd /tmp/
+wget https://raw.githubusercontent.com/kiali/kiali/master/hack/istio/istio-install.sh
+sh istio-install.sh
+```
+
+If the script fails (on Openshift 3.9) you may need to edit `/tmp/istio/install/ansible/istio/tasks/assert_oc_admin.yml`
+
+and comment out the entire `-assert:` block at the end of the file and re-run the script
+
+```
+- assert:
+    that:
+      - ro.rc == 0
+      - uo.rc == 0
+[...]
+```
