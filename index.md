@@ -33,6 +33,8 @@ Kiali is still in development. Snapshots releases are pushed on Dockerhub from t
 
 To deploy Kiali to your Istio-enabled OpenShift cluster you can run the following. Kiali currently requires Istio version 0.7.1 (see below if you have not yet installed Istio).
 
+### Preparation
+
 First you need to grant the user that is installing Istio and Kiali the `cluster-admin` role. In the following case this will be the `admin` user:
 
 ````
@@ -41,12 +43,14 @@ oc adm policy add-cluster-role-to-user cluster-admin -z default admin
 
 ````
 
-Then log in as this admin user:
-
+<span id="admin-user"/>
+Then log in as this `admin` user:
 
 	oc login -u admin -p admin
 
 You can now install Istio if needed ( [see below](#install-istio) ).
+
+### Install Kiali
 
 Then install Kiali:
 
@@ -111,7 +115,7 @@ Kiali is open source and released under [Apache License v2](https://www.apache.o
 <h3 id="install-istio">Installing Istio</h3>
 
 
-You can use the following script to install Istio. The user installing it needs cluster-admin rights (e.g. the admin user from above).
+You can use the following script to install Istio. The user installing it needs cluster-admin rights (e.g. the `admin` user from [above](#admin-user)).
 
 ```
 cd /tmp/
