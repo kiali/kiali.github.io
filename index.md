@@ -82,7 +82,7 @@ You can also use the `oc` command to determine the base-url:
 oc get route -n istio-system -l app=kiali
 ```
 
-Log in to the Kiali-UI as `jdoe`/`password`. 
+Log in to the Kiali-UI as `admin`/`admin`. 
 
 To achieve the best results you should have an example application like 'bookinfo' from the Istio examples deployed (if you use the install script from [below](#install-istio) it is already installed).
 
