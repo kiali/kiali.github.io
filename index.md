@@ -101,11 +101,11 @@ Kiali is open source and released under [Apache License v2](https://www.apache.o
 
 ## More...
 
-[Kiali-Users](https://groups.google.com/forum/#!forum/kiali-users) Google Group
+[Kiali-Users](https://groups.google.com/forum/#!forum/kiali-users) Google Group about using Kiali
 
-[Kiali-Dev](https://groups.google.com/forum/#!forum/kiali-dev">) Google Group
+[Kiali-Dev](https://groups.google.com/forum/#!forum/kiali-dev) Google Group about developing Kiali itself
 
-[Kiali on GitHub](https://github.com/kiali">)
+[Kiali Sources on GitHub](https://github.com/kiali) and [detailed instructions for the build](https://github.com/kiali/kiali/blob/master/README.adoc) (includes notes for running on plain Kubernetes)
 
 [Kiali on Irc](irc://irc.freenode.net/#kiali)
 
