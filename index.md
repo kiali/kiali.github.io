@@ -65,8 +65,7 @@ curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/openshift/kiali
    VERSION_LABEL=master \
    VERBOSE_MODE=4 envsubst | oc create -n istio-system -f -
 
-````
-
+```
 
 If you don't have `envsubst` installed, you can get it via the Gnu `gettext` package.
 
@@ -81,6 +80,30 @@ You can also use the `oc` command to determine the base-url:
 ```
 oc get route -n istio-system -l app=kiali
 ```
+
+## Getting started on Kubernetes
+
+To deploy Kiali to your Istio-enabled Kubernetes cluster you can run the following. Kiali currently requires Istio version 0.7.1 (see below if you have not yet installed Istio).
+
+[NOTE]
+If you wish to install in Minikube, ensure that you enable the Ingress add-on by executing `minikube addons enable ingress`.
+
+```
+curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/kubernetes/kiali-configmap.yaml | \
+   VERSION_LABEL=master envsubst | kubectl create -n istio-system -f -
+
+curl https://raw.githubusercontent.com/kiali/kiali/master/deploy/kubernetes/kiali.yaml | \
+   IMAGE_NAME=kiali/kiali \
+   IMAGE_VERSION=latest \
+   NAMESPACE=istio-system \
+   VERSION_LABEL=master \
+   VERBOSE_MODE=4 envsubst | kubectl create -n istio-system -f -
+
+```
+
+Once this is done, Kiali will be deployed and running in Kubernetes. An Ingress will have been set up so you can go directly to the Kiali UI at the URL `http://[minikube-ip]/` where `[minikube-ip]` is what is reported when you run the command: `minikube ip`.
+
+## The Kiali UI
 
 Log in to Kiali-UI as `admin`/`admin`. 
 
