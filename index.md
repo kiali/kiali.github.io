@@ -85,9 +85,6 @@ oc get route -n istio-system -l app=kiali
 
 To deploy Kiali to your Istio-enabled Kubernetes cluster you can run the following. Kiali currently requires Istio version 0.7.1 (see below if you have not yet installed Istio).
 
-[WARNING]
-As of May 18, 2018, the Kubernetes support is broken. Kiali will deploy but you will not see any data. This will be fixed in the near future
-
 [NOTE]
 If you wish to install in Minikube, ensure that you enable the Ingress add-on by executing `minikube addons enable ingress`.
 
