@@ -137,7 +137,7 @@ Kiali is open source and released under [Apache License v2](https://www.apache.o
 
 ## Reporting issues and feature requests
 
-The Kiali team uses [JIRA at JBoss.org](http://issues.jboss.org/browse/KIALI) as its preferred tracker. If you have an account there, please use it to report issues and create new feature requests.
+The Kiali team uses [JIRA at JBoss.org](http://issues.jboss.org/browse/KIALI) as its preferred tracker. If you have an account there, please use it to report issues and create new feature requests (select issue type 'Bug' for bugs and 'Story' for enhancement requests).
 
 Alternatively you can also use the [GitHub tracker](https://github.com/kiali/kiali/issues) for this purpose.
 
