@@ -135,6 +135,12 @@ To achieve the best results you should have an example application like 'bookinf
 
 Kiali is open source and released under [Apache License v2](https://www.apache.org/licenses/LICENSE-2.0.txt)
 
+## Reporting issues and feature requests
+
+The Kiali team uses [JIRA at JBoss.org](http://issues.jboss.org/browse/KIALI) as its preferred tracker. Please use it to report issues and create new feature requests (select issue type 'Bug' for bugs and 'Story' for enhancement requests).
+
+Alternatively you can also use the [GitHub tracker](https://github.com/kiali/kiali/issues) for this purpose.
+
 ## More...
 
 [Kiali-Users](https://groups.google.com/forum/#!forum/kiali-users) Google Group about using Kiali
