@@ -1,3 +1,4 @@
 theme: jekyll-theme-slate
 title: Kiali
 description: Observability for the service mesh
+repository: kiali/kiali.github.io
