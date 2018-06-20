@@ -108,12 +108,10 @@ If you do not already have an Istio-enabled cluster but want to see what Kiali i
 
 ```
 wget https://raw.githubusercontent.com/kiali/kiali/master/hack/cluster-openshift.sh
-sh cluster-openshift.sh --istio-version 0.8.0 --kiali-enabled true up
+sh cluster-openshift.sh --kiali-enabled true up
 ```
 
 [NOTE]
-We are recommending 0.8.0 in the above command, but keep in mind Kiali is currently in active development to get it to support 0.8.0 fully. You could try 0.7.1 instead..
-
 If you do not already have an Istio-enabled application to test with, you can install one using the [Bookinfo Sample install script](https://github.com/kiali/kiali/blob/master/hack/istio) provided as a convenience. See [the Istio docs](https://istio.io/docs/guides/bookinfo/) for more details about this sample application.
 
 ## The Kiali UI
