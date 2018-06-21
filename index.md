@@ -30,7 +30,7 @@ to provide distributed tracing out of the box.
 
 Kiali is still in development. Snapshots releases are pushed on Dockerhub from the CI pipeline.
 
-To deploy Kiali to your Istio-enabled OpenShift cluster you can run the following. Kiali currently requires Istio version 0.7.1 (see below if you have not yet installed Istio).
+To deploy Kiali to your Istio-enabled OpenShift cluster you can run the following. Kiali currently requires Istio version 0.8.0 (see below if you have not yet installed Istio).
 
 ### Preparation
 
@@ -82,7 +82,7 @@ oc get route -n istio-system -l app=kiali
 
 ## Getting started on Kubernetes
 
-To deploy Kiali to your Istio-enabled Kubernetes cluster you can run the following. Kiali currently requires Istio version 0.7.1 (see below if you have not yet installed Istio).
+To deploy Kiali to your Istio-enabled Kubernetes cluster you can run the following. Kiali currently requires Istio version 0.8.0 (see below if you have not yet installed Istio).
 
 [NOTE]
 If you wish to install in Minikube, ensure that you enable the Ingress add-on by executing `minikube addons enable ingress`.
@@ -108,12 +108,10 @@ If you do not already have an Istio-enabled cluster but want to see what Kiali i
 
 ```
 wget https://raw.githubusercontent.com/kiali/kiali/master/hack/cluster-openshift.sh
-sh cluster-openshift.sh --istio-version 0.7.1 --kiali-enabled true up
+sh cluster-openshift.sh --kiali-enabled true up
 ```
 
 [NOTE]
-Notice the above command line forces the version of Istio to 0.7.1. Kiali will support Istio 0.8.0 in the very near future, but for now, we recommend using --istio-version 0.7.1 if you just want to see what Kiali is all about.
-
 If you do not already have an Istio-enabled application to test with, you can install one using the [Bookinfo Sample install script](https://github.com/kiali/kiali/blob/master/hack/istio) provided as a convenience. See [the Istio docs](https://istio.io/docs/guides/bookinfo/) for more details about this sample application.
 
 ## The Kiali UI
