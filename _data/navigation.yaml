@@ -1,7 +1,0 @@
-- link: /
-  name: Home
-- link: /pages/get_started.html
-  name: Get Started
-  highlight: true
-- link: /pages/api/overview.html
-  name: API Docs
